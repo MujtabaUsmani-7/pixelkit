@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free, simple image tools. Compress and resize images directly in your browser with PixelKit.">
+  <title>PixelKit — Free Image Tools</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="PixelKit home"><span class="brand-mark">P</span> PixelKit</a>
+    <nav aria-label="Main navigation">
+      <a href="#tools">Tools</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="header-cta" href="#tools">Explore tools <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> FREE ONLINE IMAGE TOOLS</div>
+        <h1>Make your images<br><span>work smarter.</span></h1>
+        <p class="hero-description">Simple tools to compress and resize images in seconds. No account, no complicated software, and your files stay on your device.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#tools">Explore free tools <span>→</span></a>
+          <span class="privacy-note"><span class="lock">▣</span> Processed in your browser</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Abstract image processing illustration">
+        <div class="art-glow"></div>
+        <div class="art-window">
+          <div class="window-top"><i></i><i></i><i></i><span>pixelkit / workspace</span></div>
+          <div class="art-image">
+            <div class="sun"></div><div class="mountain mountain-back"></div><div class="mountain mountain-front"></div>
+          </div>
+          <div class="art-progress"><span>Optimizing image</span><b>84%</b><div class="progress-track"><i></i></div></div>
+        </div>
+        <div class="floating-chip chip-top">✦ Lightweight files</div>
+        <div class="floating-chip chip-bottom"><span>✓</span> Ready to download</div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><strong>100%</strong><span>Browser-based</span></div>
+      <div><strong>0</strong><span>Sign-ups required</span></div>
+      <div><strong>Free</strong><span>To get started</span></div>
+    </section>
+
+    <section class="tools-section" id="tools">
+      <div class="section-heading">
+        <div><div class="eyebrow">THE TOOLBOX</div><h2>Everything you need.<br><span>Nothing you don't.</span></h2></div>
+        <p>Choose a tool to get started. More useful tools will be added as PixelKit grows.</p>
+      </div>
+
+      <div class="tool-grid">
+        <article class="tool-card featured">
+          <div class="tool-icon purple">▧</div><span class="tool-tag">AVAILABLE NOW</span>
+          <h3>Image Compressor</h3>
+          <p>Reduce image file size while keeping your pictures looking sharp.</p>
+          <button class="text-button" data-tool="compress">Open compressor <span>→</span></button>
+        </article>
+        <article class="tool-card">
+          <div class="tool-icon blue">⌗</div><span class="tool-tag">AVAILABLE NOW</span>
+          <h3>Image Resizer</h3>
+          <p>Change image dimensions to fit websites, posts, and projects.</p>
+          <button class="text-button" data-tool="resize">Open resizer <span>→</span></button>
+        </article>
+        <article class="tool-card muted-card">
+          <div class="tool-icon orange">⇄</div><span class="tool-tag soon">COMING NEXT</span>
+          <h3>JPG to PNG</h3><p>Convert common image formats with a simple workflow.</p><span class="disabled-link">Coming soon</span>
+        </article>
+        <article class="tool-card muted-card">
+          <div class="tool-icon green">◈</div><span class="tool-tag soon">COMING NEXT</span>
+          <h3>WebP Converter</h3><p>Prepare modern, lightweight images for the web.</p><span class="disabled-link">Coming soon</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="workspace-section" id="workspace">
+      <div class="workspace-intro">
+        <div class="eyebrow">TRY IT NOW</div><h2>Your image workspace</h2>
+        <p>Select a tool, upload an image, and download the result. Your image is processed locally in this browser.</p>
+      </div>
+      <div class="workspace">
+        <div class="workspace-tabs">
+          <button class="tab active" data-mode="compress">Compress</button>
+          <button class="tab" data-mode="resize">Resize</button>
+        </div>
+        <div class="upload-area" id="drop-area">
+          <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp">
+          <div class="upload-symbol">↑</div>
+          <h3>Drop an image here</h3>
+          <p>or <label for="file-input" class="browse-link">browse files</label></p>
+          <small>JPG, PNG or WebP · Max 20 MB</small>
+        </div>
+        <div class="editor hidden" id="editor">
+          <div class="file-summary">
+            <div class="file-thumb" id="file-thumb"></div>
+            <div class="file-info"><strong id="file-name">image.jpg</strong><span id="file-size">0 KB</span></div>
+            <button id="remove-file" class="remove-button" aria-label="Remove image">×</button>
+          </div>
+          <div class="settings" id="compress-settings">
+            <label for="quality">Image quality <strong id="quality-value">80%</strong></label>
+            <input type="range" id="quality" min="10" max="100" value="80">
+          </div>
+          <div class="settings hidden" id="resize-settings">
+            <div class="dimension-fields">
+              <label>Width (px)<input type="number" id="width" min="1" max="10000"></label>
+              <label>Height (px)<input type="number" id="height" min="1" max="10000"></label>
+            </div>
+            <label class="check-label"><input type="checkbox" id="keep-ratio" checked> Keep aspect ratio</label>
+          </div>
+          <button class="primary-button full-button" id="process-button">Compress image <span>→</span></button>
+          <div class="result hidden" id="result" aria-live="polite"></div>
+        </div>
+        <p class="privacy-footnote">🔒 Your image does not get uploaded to a server. Processing happens on your device.</p>
+      </div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="eyebrow">SIMPLE BY DESIGN</div><h2>Three steps. That's it.</h2>
+      <div class="steps">
+        <div><span>01</span><h3>Choose a tool</h3><p>Select the image task you want to complete.</p></div>
+        <div><span>02</span><h3>Add your image</h3><p>Upload a supported image from your device.</p></div>
+        <div><span>03</span><h3>Download</h3><p>Process it and save your new image.</p></div>
+      </div>
+    </section>
+
+    <section class="about-banner" id="about">
+      <div><div class="eyebrow">BUILT FOR EVERYDAY CREATORS</div><h2>Less friction.<br>More creating.</h2></div>
+      <p>PixelKit is an independent project focused on making everyday image tasks clear, quick, and accessible.</p>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">P</span> PixelKit</a><span>© <span id="year"></span> PixelKit. Built for creators.</span><a href="#tools">Back to tools ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
