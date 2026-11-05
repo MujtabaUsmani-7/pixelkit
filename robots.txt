@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mujtabausmani-7.github.io/pixelkit/sitemap.xml
